@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from . import serializers
+from .models import Subject
 
-# Create your views here.
 def homepage(request):
-    return render(request, "homepage.html")
+    Choices = [x[1] for x in Subject._meta.get_field('subject').choices]
+    return render(request, "homepage.html", {'subjects':Choices})
 
 
 def blogPage(request):
