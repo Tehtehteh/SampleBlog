@@ -2,7 +2,7 @@ from django.shortcuts import render
 from . import serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import BlogPost
+from .models import BlogPost, Subject
 
 
 @api_view(['GET'])
@@ -12,7 +12,7 @@ def getBlogPosts(request):
     return Response(serializer.data)
 
 def homepage(request):
-    Choices = [x[1] for x in BlogPost._meta.get_field('subject').choices]
+    Choices = [x for x in Subject.objects.all()]
     post = BlogPost.objects.all()
     return render(request, "homepage.html", {'subjects':Choices, 'post':post})
 

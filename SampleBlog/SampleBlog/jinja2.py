@@ -8,4 +8,8 @@ def environment(**options):
        'static': staticfiles_storage.url,
        'url': reverse,
     })
+    env.filters['localtime'] = datetimeformat
     return env
+
+def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
+    return value.strftime(format)
