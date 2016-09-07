@@ -6,6 +6,7 @@ function getBlogPosts(){
         type: 'GET',
         url : '/api/blogposts',
         success:function(posts){
+            $('.fa').removeClass('hidden');
             for(let i = 0; i < posts.length; i++){
                 var str = `
                 <div class="panel panel-default">
@@ -37,7 +38,9 @@ function getBlogPosts(){
             str = str.format(posts[i].title, new Date(posts[i].date), posts[i].pic, posts[i].text);
             $('.body-container').append(str);
             }
-        }
+            $('.body-container').fadeIn(2000);
+            $('.fa').toggleClass('hidden');
+        },
     })
 };
 $('li[role=presentation]:first').toggleClass('active');

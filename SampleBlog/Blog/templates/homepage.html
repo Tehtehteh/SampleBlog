@@ -3,9 +3,11 @@
 <head>
     {% block head %}
     <link rel="stylesheet" href="{{ static('css/bootstrap.min.css') }}" type = "text/css"/>
+    <link rel="stylesheet" href=" {{static ('css/styles.css') }}" type="text/css"/>
     <script src="https://use.fontawesome.com/525d12f3f5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src = "{{ static ('js/blogPost.js')}}" defer></script>
+    <script src="https://use.fontawesome.com/525d12f3f5.js"></script>
     <title>Django Proj</title>
     {% endblock head %}
 </head>
@@ -22,6 +24,7 @@
                 <li role="presentation"><a style="cursor: pointer;">{{subject}}</a></li>
             {%endfor%}
         </ul>
+        <em class="fa fa-refresh fa-5x center" aria-hidden="true"></em>
         <!--{% for bp in post %}-->
             <!--<div class="panel panel-default">-->
                 <!--<div class="panel-heading">-->
