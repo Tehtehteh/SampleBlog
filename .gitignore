@@ -54,6 +54,4 @@ ENV/
 SampleBlog/Blog/migrations/0007_auto_20160906_1108.py
 SampleBlog/Blog/migrations/0008_auto_20160906_1239.py
 SampleBlog/Blog/migrations/0009_auto_20160906_1240.py
-SampleBlog/Blog/static/css/
-SampleBlog/Blog/static/fonts/
-SampleBlog/Blog/static/js/
+
