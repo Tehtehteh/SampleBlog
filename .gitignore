@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 SampleBlog/SampleBlog/settings.py
-SampleBlog/SampleBlog/Blog/migrations/
+SampleBlog/SampleBlog/Blog/migrations
 __pycache__/
 *.py[cod]
 *$py.class

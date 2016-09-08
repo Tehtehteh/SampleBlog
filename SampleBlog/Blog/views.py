@@ -13,8 +13,7 @@ def getBlogPosts(request):
 
 def homepage(request):
     Choices = [x for x in Subject.objects.all()]
-    post = BlogPost.objects.all()
-    return render(request, "homepage.html", {'subjects':Choices, 'post':post})
+    return render(request, "homepage.html", {'subjects':Choices})
 
 
 def blogPage(request):
