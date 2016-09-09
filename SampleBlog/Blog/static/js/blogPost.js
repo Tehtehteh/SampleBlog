@@ -7,6 +7,7 @@ function getBlogPostsByCategory(category){
         url: '/api/blogposts/' + category,
         success: function(posts){
             $('.fa').removeClass('hidden');
+            $('.my-container').html('');
             for (let i = 0; i < posts.length; i++){
                 var str = `
                 <div class="panel panel-default">
@@ -36,7 +37,7 @@ function getBlogPostsByCategory(category){
                 </div>
             </div>`;
             str = str.format(posts[i].title, new Date(posts[i].date), posts[i].pic, posts[i].text);
-            $('.my-container').html(str);
+            $('.my-container').append(str);
             }
         }
     })
