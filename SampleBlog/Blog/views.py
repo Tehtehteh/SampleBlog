@@ -6,8 +6,8 @@ from .models import BlogPost, Subject
 
 
 @api_view(['GET'])
-def getBlogPosts(request):
-    posts = BlogPost.objects.all()
+def getBlogPosts(request, category):
+    posts = BlogPost.objects.filter(subject__subject=category)
     serializer = serializers.BlogPostSerializer(posts, many=True)
     return Response(serializer.data)
 
